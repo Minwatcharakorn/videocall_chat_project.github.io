@@ -2,7 +2,10 @@ const APP_ID = "e83b916113d04fac970b45cfbde29930"
 const TOKEN = "007eJxTYODmmJLndzt/dnxdq5C0x9Ip91MSWJkb34kbWaZPZnus4q7AkGphnGRpaGZoaJxiYJKWmGxpbpBkYpqclpSSamRpaWyQaPsjpSGQkcHkgDITIwMEgvgsDLmJmXkMDAAvQhum"
 const CHANNEL = "main"
 
+
 const client = AgoraRTC.createClient({mode:'rtc', codec:'vp8'})
+
+const iconElement = document.createElement("i");
 
 let localTracks = []
 let remoteUsers = {}
@@ -71,29 +74,51 @@ let leaveAndRemoveLocalStream = async () => {
     document.getElementById('join-btn').style.display = 'block'
     document.getElementById('stream-controls').style.display = 'none'
     document.getElementById('video-streams').innerHTML = ''
+    
+    // เปลี่ยนไอคอนเป็น "fas fa-sign-in-alt"
+    document.getElementById('leave-icon').style.fontSize = '30px';
+    document.getElementById('leave-icon').classList.add('fa-sign-in-alt')
+    document.getElementById('leave-icon').classList.remove('fa-sign-out-alt')
 }
 
 let toggleMic = async (e) => {
-    if (localTracks[0].muted){
+    if(localTracks[0].muted){
         await localTracks[0].setMuted(false)
-        e.target.innerText = 'Mic on'
-        e.target.style.backgroundColor = 'cadetblue'
-    }else{
+        e.target.innerText = ' Mic on'
+        e.target.style.backgroundColor = '#8fce00'
+        
+        document.getElementById('mic-icon').style.fontSize = '30px';
+        document.getElementById('mic-icon').classList.add('fa-microphone')
+        document.getElementById('mic-icon').classList.remove('fa-microphone-slash')
+    } else {
         await localTracks[0].setMuted(true)
-        e.target.innerText = 'Mic off'
+        e.target.innerText = ' Mic off'
         e.target.style.backgroundColor = '#EE4B2B'
+        
+        document.getElementById('mic-icon').style.fontSize = '30px';
+        document.getElementById('mic-icon').classList.add('fa-microphone-slash')
+        document.getElementById('mic-icon').classList.remove('fa-microphone')
     }
 }
+
 
 let toggleCamera = async (e) => {
     if(localTracks[1].muted){
         await localTracks[1].setMuted(false)
-        e.target.innerText = 'Camera on'
-        e.target.style.backgroundColor = 'cadetblue'
+        e.target.innerText = ' Camera ON'
+        e.target.style.backgroundColor = '#8fce00'
+        // เปลี่ยนไอคอนเป็น "fas fa-video"
+        document.getElementById('camera-icon').style.fontSize = '30px';
+        document.getElementById('camera-icon').classList.add('fa-video')
+        document.getElementById('camera-icon').classList.remove('fa-video-slash')
     }else{
         await localTracks[1].setMuted(true)
-        e.target.innerText = 'Camera off'
+        e.target.innerText = ' Camera OFF'
         e.target.style.backgroundColor = '#EE4B2B'
+        // เปลี่ยนไอคอนเป็น "fas fa-video-slash"
+        document.getElementById('camera-icon').style.fontSize = '30px';
+        document.getElementById('camera-icon').classList.add('fa-video-slash')
+        document.getElementById('camera-icon').classList.remove('fa-video')
     }
 }
 

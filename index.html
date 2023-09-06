@@ -7,23 +7,38 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        
+        .fa-phone {
+            font-size: 24px; 
+        }
+
+        .fa-microphone {
+            font-size: 30px; 
+        }
+
+        .fa-video {
+            font-size: 30px; 
+        }
+
+        .fa-sign-out-alt {
+            font-size: 30px; 
+        }
+    </style>
 </head>
 <body>
-
-    <button id="join-btn"><i class="fa-solid fa-phone"></i>Call Chat</button>
-
+    <button id="join-btn"><i class="fa-solid fa-phone"></i>Video Call</button>
     <div id="stream-wrapper">
         <div id="video-streams"></div>
-
         <div id="stream-controls">
-            <button id="leave-btn"><i class="fa-solid fa-phone-slash"></i>Leave</button>
-            <button id="mic-btn"><i class="fa-solid fa-microphone"></i>Mic On</button>
-            <button id="camera-btn"><i class="fa-solid fa-video"></i>Camera on</button>
+            <button id="leave-btn" class="control-button"><i id="leave-icon" class="fas fa-sign-out-alt"></i> Leave</button>
+            <button id="mic-btn" class="control-button">
+                <i id="mic-icon" class="fa fa-microphone"></i>
+            </button>
+            <button id="camera-btn" class "control-button"><i id="camera-icon" class="fas fa-video"></i></button>
         </div>
     </div>
-    
 </body>
-<!-- <script src="https://download.agora.io/sdk/release/AgoraRTC_N.js"></script> -->
 <script src="AgoraRTC_N-4.7.3.js"></script>
 <script src='main.js'></script>
 </html>
