@@ -76,7 +76,7 @@ let leaveAndRemoveLocalStream = async () => {
     document.getElementById('video-streams').innerHTML = ''
     
     // เปลี่ยนไอคอนเป็น "fas fa-sign-in-alt"
-    document.getElementById('leave-icon').style.fontSize = '30px';
+    document.getElementById('leave-icon').style.fontSize = '24px';
     document.getElementById('leave-icon').classList.add('fa-sign-in-alt')
     document.getElementById('leave-icon').classList.remove('fa-sign-out-alt')
 }
@@ -87,7 +87,7 @@ let toggleMic = async (e) => {
         e.target.innerText = ' Mic on'
         e.target.style.backgroundColor = '#8fce00'
         
-        document.getElementById('mic-icon').style.fontSize = '30px';
+        document.getElementById('mic-icon').style.fontSize = '24px';
         document.getElementById('mic-icon').classList.add('fa-microphone')
         document.getElementById('mic-icon').classList.remove('fa-microphone-slash')
     } else {
@@ -95,7 +95,7 @@ let toggleMic = async (e) => {
         e.target.innerText = ' Mic off'
         e.target.style.backgroundColor = '#EE4B2B'
         
-        document.getElementById('mic-icon').style.fontSize = '30px';
+        document.getElementById('mic-icon').style.fontSize = '24px';
         document.getElementById('mic-icon').classList.add('fa-microphone-slash')
         document.getElementById('mic-icon').classList.remove('fa-microphone')
     }
@@ -108,7 +108,7 @@ let toggleCamera = async (e) => {
         e.target.innerText = ' Camera ON'
         e.target.style.backgroundColor = '#8fce00'
         // เปลี่ยนไอคอนเป็น "fas fa-video"
-        document.getElementById('camera-icon').style.fontSize = '30px';
+        document.getElementById('camera-icon').style.fontSize = '24px';
         document.getElementById('camera-icon').classList.add('fa-video')
         document.getElementById('camera-icon').classList.remove('fa-video-slash')
     }else{
@@ -116,7 +116,7 @@ let toggleCamera = async (e) => {
         e.target.innerText = ' Camera OFF'
         e.target.style.backgroundColor = '#EE4B2B'
         // เปลี่ยนไอคอนเป็น "fas fa-video-slash"
-        document.getElementById('camera-icon').style.fontSize = '30px';
+        document.getElementById('camera-icon').style.fontSize = '24px';
         document.getElementById('camera-icon').classList.add('fa-video-slash')
         document.getElementById('camera-icon').classList.remove('fa-video')
     }
